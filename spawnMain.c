@@ -138,7 +138,7 @@ int validateInput(int numArgs, char *cmdInput[])
 	{
 		printf(
 				"Error, invalid number of arguments. Please input %d-%d integers.\n",
-				MIN_ARGS, MAX_ARGS);
+				(MIN_ARGS - 1), (MAX_ARGS - 1));
 		return VALIDATION_FAILURE;
 	}
 	int argsIterator = 0;
@@ -157,7 +157,7 @@ int validateInput(int numArgs, char *cmdInput[])
 			return VALIDATION_FAILURE;
 		}
 
-		//we add one to the MIN_UNIQUE_INT because there is already a special case handling zero.
+		//we add one to the INPUT_MIN_ASCII because there is already a special case handling zero.
 		if (currentArg[FIRST_CHAR]
 				< (INPUT_MIN_ASCII + 1)|| currentArg[FIRST_CHAR] > INPUT_MAX_ASCII)
 		{
